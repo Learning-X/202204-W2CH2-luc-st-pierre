@@ -67,4 +67,16 @@ describe("Given a function strictEquals", () => {
       expect(result).toBe(expectedValue);
     });
   });
+
+  describe("When comparing values true and false", () => {
+    test("Then it should return true", () => {
+      const firstValue = true;
+      const secondValue = false;
+      const expectedValue = false;
+
+      const result = strictEquals(firstValue, secondValue);
+
+      expect(result).toBe(expectedValue);
+    });
+  });
 });

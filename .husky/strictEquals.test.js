@@ -43,4 +43,16 @@ describe("Given a function strictEquals", () => {
       expect(result).toBe(expectedValue);
     });
   });
+
+  describe("When comparing values -0 and 0", () => {
+    test("Then it should return true", () => {
+      const firstValue = -0;
+      const secondValue = 0;
+      const expectedValue = true;
+
+      const result = strictEquals(firstValue, secondValue);
+
+      expect(result).toBe(expectedValue);
+    });
+  });
 });

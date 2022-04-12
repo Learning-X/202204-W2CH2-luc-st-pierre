@@ -57,7 +57,7 @@ describe("Given a function strictEquals", () => {
   });
 
   describe("When comparing values 1 and '1'", () => {
-    test("Then it should return true", () => {
+    test("Then it should return false", () => {
       const firstValue = 1;
       const secondValue = "1";
       const expectedValue = false;
@@ -69,10 +69,22 @@ describe("Given a function strictEquals", () => {
   });
 
   describe("When comparing values true and false", () => {
-    test("Then it should return true", () => {
+    test("Then it should return false", () => {
       const firstValue = true;
       const secondValue = false;
       const expectedValue = false;
+
+      const result = strictEquals(firstValue, secondValue);
+
+      expect(result).toBe(expectedValue);
+    });
+  });
+
+  describe("When comparing values false and false", () => {
+    test("Then it should return true", () => {
+      const firstValue = false;
+      const secondValue = false;
+      const expectedValue = true;
 
       const result = strictEquals(firstValue, secondValue);
 

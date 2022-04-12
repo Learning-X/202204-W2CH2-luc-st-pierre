@@ -20,4 +20,15 @@ describe("Given a function strictEquals", () => {
       expect(result).toBe(expectedValue);
     });
   });
+
+  describe("When comparing the same values NaN", () => {
+    test("Then it should return true", () => {
+      const value = NaN;
+      const expectedValue = false;
+
+      const result = strictEquals(value, value);
+
+      expect(result).toBe(expectedValue);
+    });
+  });
 });
